@@ -98,6 +98,10 @@ nmap <leader>sl :rightbelow vnew<C-R>=expand("%:p:h") . '/'<CR>
 nmap <leader>sk :leftabove  new<C-R>=expand("%:p:h") . '/'<CR>
 nmap <leader>sj :rightbelow new<C-R>=expand("%:p:h") . '/'<CR>
 
+
+" Buffer handeling
+nmap <leader>b :buffers<CR>
+
 "Search down into subfolders
 "Provides tab-completionfo all file-related tasks
 set path+=**
