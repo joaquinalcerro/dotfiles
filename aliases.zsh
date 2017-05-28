@@ -1,8 +1,8 @@
 
-alias rr="cd /home/jalcerro/RoRDev"
-alias ex="cd /home/jalcerro/ElixirDev"
+alias rr="cd ~/RoRDev"
+alias ex="cd ~/ElixirDev"
 alias hm="cd ~"
-alias fa="cd /home/jalcerro/RoRDev/findattach"
+alias fa="cd ~/RoRDev/findattach"
 # alias tm="tmux"
 alias sd="sudo swapoff -a && systemctl poweroff"
 alias tm="tmux -2 new-session -n 'DevIDE' \; split-window -d -p 20" 
