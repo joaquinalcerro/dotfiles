@@ -63,8 +63,8 @@ Plugin 'tomasr/molokai'
 Plugin 'c-brenn/phoenix.vim'
 Plugin 'tpope/vim-projectionist'
 
-call vundle#end()            " required
 
+call vundle#end()            " required
 " ---------------------------------------
 "  Deoplete Plugin
 "  --------------------------------------
@@ -133,8 +133,10 @@ colors molokai "elflord
 " Set leader key
 let mapleader=","
 
-set tabstop=2
+set expandtab
 set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set encoding=utf-8
 set laststatus=2
 set cursorline
@@ -142,6 +144,9 @@ set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 set modifiable
 
+"Enable syntax and plugins (for netrw)
+syntax enable
+filetype plugin indent on
 " ---------------------------------------
 " Search options
 " ---------------------------------------
@@ -179,7 +184,8 @@ nmap <leader>sj :rightbelow new<C-R>=expand("%:p:h") . '/'<CR>
 
 
 " Buffer handeling
-nmap <leader>b :buffers<CR>
+nmap <leader>bh :bnext<CR>
+nmap <leader>bl :bp<CR>
 
 " Find files
 nmap <leader>f :find <C-R>
@@ -252,8 +258,3 @@ for dir in ["h", "j", "l", "k"]
 endfor
 
 
-"Enable syntax and plugins (for netrw)
-syntax enable
-filetype on
-filetype plugin on
-filetype indent on
