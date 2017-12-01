@@ -32,6 +32,13 @@ call vundle#begin()
 " " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+
+" ---------------------------------------------
+"  Python configuration
+"  --------------------------------------------
+let g:python_host_prog = '/usr/local/bin/python2.7'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " ---------------------------------------
 " Bundle Installed Plugins
 " --------------------------------------
@@ -47,7 +54,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
 Plugin 'marcweber/vim-addon-mw-utils'
-Plugin 'elixir-lang/vim-elixir'
+" Plugin 'elixir-lang/vim-elixir'
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'sirver/ultisnips'
@@ -62,6 +70,9 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'tomasr/molokai'
 Plugin 'c-brenn/phoenix.vim'
 Plugin 'tpope/vim-projectionist'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'dracula/vim'
+Plugin 'mileszs/ack.vim'
 
 
 call vundle#end()            " required
@@ -122,11 +133,18 @@ let g:tagbar_type_elixir = {
 		\ }
 
 " ---------------------------------------
+" Tabs configuration
+" ---------------------------------------
+nmap <F3> :tabnew<CR>
+nmap <F7> :tabprevious<CR>
+nmap <F9> :tabnext<CR>
+
+" ---------------------------------------
 " Basic Configuration
 " ---------------------------------------
 
 set background=dark
-colors molokai "elflord
+colors dracula "molokai elflord
 " let g:molokai_original = 1
 " let g:rehash256 = 1
 "
@@ -139,7 +157,7 @@ set softtabstop=2
 set tabstop=2
 set encoding=utf-8
 set laststatus=2
-set cursorline
+" set cursorline
 set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 set modifiable
@@ -189,6 +207,7 @@ nmap <leader>bl :bp<CR>
 
 " Find files
 nmap <leader>f :find <C-R>
+nmap <leader>s :Ack! <C-R>
 
 
 "Search down into subfolders
