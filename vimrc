@@ -254,7 +254,7 @@ set splitright
 " Terminal settings
 tnoremap <Leader><ESC> <C-\><C-n>
 
-" Window navigation function
+" Window navigation in VIM function
 " Make ctrl-h/j/k/l move between windows and auto-insert in terminals
 func! s:mapMoveToWindowInDirection(direction)
     func! s:maybeInsertMode(direction)
@@ -276,4 +276,8 @@ for dir in ["h", "j", "l", "k"]
     call s:mapMoveToWindowInDirection(dir)
 endfor
 
+" -------------------------
+"  Commands
+"  ------------------------
 
+autocmd FileType eelixir inoremap ee <%%><Esc>F%i
