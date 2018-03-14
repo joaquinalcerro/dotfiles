@@ -4,10 +4,10 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath+=/Users/jalcerro/.config/nvim/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/jalcerro/.config/nvim/repos/github.com/Shougo/dein.vim/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('/Users/jalcerro/.config/nvim')
-  call dein#begin('/Users/jalcerro/.config/nvim')
+if dein#load_state('/home/jalcerro/.config/nvim')
+  call dein#begin('/home/jalcerro/.config/nvim')
 
   call dein#add('Shougo/neocomplete.vim')
 	call dein#add('Shougo/deoplete.nvim')
@@ -36,8 +36,8 @@ Plugin 'VundleVim/Vundle.vim'
 " ---------------------------------------------
 "  Python configuration
 "  --------------------------------------------
-let g:python_host_prog = '/usr/local/bin/python2.7'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog = '/usr/bin/python2.7'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " ---------------------------------------
 " Bundle Installed Plugins
@@ -61,7 +61,6 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ryanoasis/vim-devicons'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'majutsushi/tagbar'
 Plugin 'elmcast/elm-vim'
@@ -73,6 +72,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'dracula/vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'ryanoasis/vim-devicons'
 
 
 call vundle#end()            " required
@@ -156,11 +156,14 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set encoding=utf-8
+set guifont=DroidSansMono\ Nerd\ Font\ Mono\ Book\ 14
+" set guifont=Fira\ Code\ Regular\ 13
 set laststatus=2
 " set cursorline
 set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 set modifiable
+" set foldmethod=indent
 
 "Enable syntax and plugins (for netrw)
 syntax enable
