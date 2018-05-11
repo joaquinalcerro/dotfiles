@@ -4,10 +4,12 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath+=/home/jalcerro/.config/nvim/repos/github.com/Shougo/dein.vim/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/jalcerro/.config/nvim/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('/home/jalcerro/.config/nvim')
   call dein#begin('/home/jalcerro/.config/nvim')
+
+  call dein#add('/home/jalcerro/.config/nvim/repos/github.com/Shougo/dein.vim')
 
   call dein#add('Shougo/neocomplete.vim')
 	call dein#add('Shougo/deoplete.nvim')
@@ -143,7 +145,8 @@ nmap <F9> :tabnext<CR>
 " Basic Configuration
 " ---------------------------------------
 
-set background=dark
+set termguicolors
+" set background=dark
 colors dracula "molokai elflord
 " let g:molokai_original = 1
 " let g:rehash256 = 1
