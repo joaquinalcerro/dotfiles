@@ -55,3 +55,4 @@ bind-key | select-layout even-horizontal
 # Reload tmux config
 bind-key r source-file ~/.tmux.conf
 
+
