@@ -16,6 +16,8 @@ set laststatus=2
 set cursorline
 set modifiable
 " set autochdir
+"
+autocmd InsertEnter,InsertLeave * set cul!
 
 " Disable terminal line numbers
 augroup TerminalStuff
@@ -89,6 +91,17 @@ set nonumber norelativenumber
 nmap <F12> :set number! relativenumber!<CR>
 
 " ---------------------------------------------
+"  Personal mappings
+" --------------------------------------------
+
+nmap tb :b#<CR>
+" nmap ,c *<C-O>:%s///gn<CR>
+nnoremap * *<C-O>:%s///gn<CR>
+
+" nnoremap <leader>c :exe ':silent !google-chrome-stable %'<CR>
+
+
+"" ---------------------------------------------
 "  Load plugins with minpack
 " --------------------------------------------
 packadd minpac
@@ -128,7 +141,6 @@ call minpac#add('mattn/emmet-vim')
 call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('dracula/zsh')
-" call minpac#add('vim-scripts/taglist.vim')
 call minpac#add('majutsushi/tagbar')
 
 " ---------------------------------------------
@@ -151,8 +163,8 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/_build/*,*/deps/*
 "  --------------------------------------------
 packadd! dracula
 let g:dracula_colorterm = 0
-colorscheme molokai
-" colorscheme dracula
+" colorscheme molokai
+colorscheme dracula
 " colorscheme gruvbox
 
 " ---------------------------------------------
@@ -183,8 +195,8 @@ nmap <leader>dif :Gvdiffsplit<CR>
 "  Vim Git Gutter Plugin Configuration
 " ---------------------------------------
 
-nmap <leader>n <Plug>(GitGutterNextHunk)
-nmap <leader>p <Plug>(GitGutterPrevHunk)
+nmap <leader>l <Plug>(GitGutterNextHunk)
+nmap <leader>h <Plug>(GitGutterPrevHunk)
 
 " ---------------------------------------
 "  Emmet Plugin Configuration
@@ -260,8 +272,6 @@ let g:NERDTreeIndicatorMapCustom = {
 nmap <F5> :tabnew<CR>
 nmap <F7> :tabprevious<CR>
 nmap <F9> :tabnext<CR>
-
-nnoremap <leader>c :exe ':silent !google-chrome-stable %'<CR>
 
 " ---------------------------------------
 " Search options
