@@ -94,12 +94,25 @@ nmap <F12> :set number! relativenumber!<CR>
 "  Personal mappings
 " --------------------------------------------
 
-nmap tb :b#<CR>
-" nmap ,c *<C-O>:%s///gn<CR>
+" Return to previous buffer
+nnoremap tb :b#<CR>
+
+" Remap * to add count in the search
 nnoremap * *<C-O>:%s///gn<CR>
 
-" nnoremap <leader>c :exe ':silent !google-chrome-stable %'<CR>
+" Edit/Source my VIMRC
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Easy exit from insert mode
+inoremap jj <ESC>
+
+" Change inside (), [], {}, <>
+" requires a fist action character as c, d
+" onoremap in( :<c-u>normal! f(vi(<cr>
+" onoremap in[ :<c-u>normal! f[vi[<cr>
+" onoremap in{ :<c-u>normal! f{vi{<cr>
+" onoremap in< :<c-u>normal! f<vi<<cr>
 
 "" ---------------------------------------------
 "  Load plugins with minpack
@@ -250,7 +263,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 " Open vim with ctl+n map key
 " map <C-n> :NERDTreeToggle<CR>
-map <F2> :NERDTreeToggle<CR>
+" map <F2> :NERDTreeToggle<CR>
+nnoremap ff :NERDTreeToggle<CR>
 
 " Git flags for NerdTree
 let g:NERDTreeIndicatorMapCustom = {
