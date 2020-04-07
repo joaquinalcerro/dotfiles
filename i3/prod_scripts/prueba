@@ -1,0 +1,15 @@
+#!/bin/bash
+
+icon=""
+color1="#6699ff"
+color2="#cc00cc"
+
+if [ "${BLOCK_BUTTON}" -eq 1 ]; then
+  sysctl hw.acpi.video.lcd0.brightness > /dev/null
+fi
+
+Blevel=$(sysctl hw.acpi.video.lcd0.brightness | awk '{ print $2 }')
+
+echo "$icon $Blevel%"
+echo "$icon $Blevel%"
+echo "$color2"

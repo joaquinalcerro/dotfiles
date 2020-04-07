@@ -1,0 +1,47 @@
+#!/bin/bash
+
+icon=""
+color1="#6699ff"
+color2="#cc00cc"
+
+if [ "${BLOCK_BUTTON}" -eq 1 ]; then
+  sysctl hw.acpi.video.lcd0.brightness > /dev/null
+fi
+
+Blevel=$(sysctl hw.acpi.video.lcd0.brightness | awk '{ print $2 }')
+
+echo "$icon $Blevel%"
+echo "$icon $Blevel%"
+echo "$color2"
+
+# step=100
+# if (($bright_level <= 100)); then
+#     if [ $1 = "dec" ]; then
+#       let total=$bright_level
+#     else
+#       let total=$bright_level+$step
+#     fi
+# fi
+#
+# if [ $bright_level -ge 101 ] && [ $bright_level -le 900 ]; then
+#     if [ $1 = "dec" ]; then
+#       let total=$bright_level-$step
+#     else
+#       let total=$bright_level+$step
+#     fi
+# fi
+#
+# if (($bright_level >= 901)); then
+#     if [ $1 = "dec" ]; then
+#       let total=$bright_level-$step
+#     else
+#       let total=1000
+#     fi
+# fi
+#
+# if [ $total -eq $bright_level ]; then
+#   exit 0
+# else
+#   $(sysctl hw.acpi.video.lcd0.brightness=$total)
+#   exit 0
+# fi
