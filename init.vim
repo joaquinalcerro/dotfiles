@@ -1,8 +1,15 @@
 " ---------------------------------------
 " Basic Configuration
 " ---------------------------------------
-set t_Co=256
-set termguicolors
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" set t_Co=256
+" set termguicolors
 set background=dark
 " Set leader key
 let mapleader=","
@@ -11,10 +18,11 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-set encoding=utf-8
+set encoding=utf8
 set laststatus=2
 set cursorline
 set modifiable
+set guifont=InconsolataGo\ Nerd\ Font\ Complete:h11
 " set autochdir
 "
 autocmd InsertEnter,InsertLeave * set cul!
