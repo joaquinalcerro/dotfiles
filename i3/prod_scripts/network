@@ -16,38 +16,67 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #------------------------------------------------------------------------
-if [[ -z "$INTERFACE" ]] ; then
-    INTERFACE="${BLOCK_INSTANCE:-wlan0}"
-fi
+# if [[ -z "$INTERFACE" ]] ; then
+#     INTERFACE="${BLOCK_INSTANCE:-wlan0}"
+# fi
 #------------------------------------------------------------------------
 
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
 # connection (think desktop), the corresponding block should not be displayed.
 
-color="#FFAE00"
-color2="#00e600"
-
 status="$(ifconfig $BLOCK_INSTANCE | grep status | awk '{print $2}')"
 address_ip="$(ifconfig $BLOCK_INSTANCE | grep inet | awk '{print $2}')"
 
-if [ $BLOCK_INSTANCE = "wlan0" ]; then
-  label=" "
-else
-  label=" "
-fi
-
+color="#00e600"
 
 if [[ $status = 'no' ]]; then
-    echo "$label"
-    echo "$label"
-    echo "$color"
-    exit
+    color="#FFAE00"
   else
-    echo "$label$address_ip"
-    echo "$label$address_ip"
-    echo "$color2"
-    exit
+    color="#00e600"
 fi
+
+if [ "${BLOCK_BUTTON}" -eq 1 ]; then 
+  case $BLOCK_INSTANCE in
+      "wlan0")
+         label=" "
+         echo "<span foreground=\"$color\">$label$address_ip</span>"
+         ;;
+      "em0") 
+         label=" "
+         echo "<span foreground=\"$color\">$label$address_ip</span>"
+        ;;
+      "extIf") 
+         label=" "
+         IP="$(curl ifconfig.me/ip)"
+         echo "<span foreground=\"$color\">$label$IP</span>"
+         exit
+        ;;
+    esac
+fi
+
+case $BLOCK_INSTANCE in
+    "wlan0")
+       label=" "
+       echo "<span foreground=\"$color\">$label</span>" 
+       echo "<span foreground=\"$color\">$label</span>" 
+       echo "<span foreground=\"$color\">$label</span>" 
+       ;;
+    "em0") 
+       label=" "
+       echo "<span foreground=\"$color\">$label</span>" 
+       echo "<span foreground=\"$color\">$label</span>" 
+       echo "<span foreground=\"$color\">$label</span>" 
+      ;;
+    "extIf") 
+       label=" "
+       echo "<span foreground=\"$color\">$label</span>" 
+       echo "<span foreground=\"$color\">$label</span>" 
+       echo "<span foreground=\"$color\">$label</span>" 
+      ;;
+  esac
+
+
+
 
 # [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] && exit
 

@@ -6,13 +6,28 @@ color2="#00e600"
 
 IP=$(curl ifconfig.me/ip)
 
+# if [ "${BLOCK_BUTTON}" -eq 1 ]; then 
+#     echo "<span foreground=\"$color\">$icon $IP</span>"
+# fi
+
 case $BLOCK_BUTTON in
-    3) echo "$icon $IP" | xsel
-       echo "$icon"
-       echo "$color"
+    1)
+       echo "<span foreground=\"$color\">$icon $IP</span>"
+       ;;
+    3) 
+       echo "<span foreground=\"$color\">$icon</span>" 
+       echo "<span foreground=\"$color\">$icon</span>" 
+       echo "<span foreground=\"$color\">$icon</span>" 
+       # echo "$icon $IP" | xsel
+       # echo "$icon"
+       # echo "$color"
       ;;
-    *) echo "$icon $IP"
-       echo "$icon"
-       echo "$color2"
+    *) 
+       echo "<span foreground=\"$color2\">$icon</span>" 
+       echo "<span foreground=\"$color2\">$icon</span>" 
+       echo "<span foreground=\"$color2\">$icon</span>" 
+       # echo "$icon $IP"
+       # echo "$icon"
+       # echo "$color2"
       ;;
   esac
