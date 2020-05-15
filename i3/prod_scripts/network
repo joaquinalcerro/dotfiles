@@ -32,7 +32,12 @@ color="#00e600"
 if [[ $status = 'no' ]]; then
     color="#FFAE00"
   else
-    color="#00e600"
+    color="#000000"
+    # color="#00e600"
+fi
+
+if [ "${BLOCK_BUTTON}" -eq 3 ]; then 
+  wpa_gui
 fi
 
 if [ "${BLOCK_BUTTON}" -eq 1 ]; then 
@@ -46,9 +51,10 @@ if [ "${BLOCK_BUTTON}" -eq 1 ]; then
          echo "<span foreground=\"$color\">$label$address_ip</span>"
         ;;
       "extIf") 
-         label=" "
+         label=""
+         # label=" "
          IP="$(curl ifconfig.me/ip)"
-         echo "<span foreground=\"$color\">$label$IP</span>"
+         echo "<span foreground=\"$color\"> $label$IP</span>"
          exit
         ;;
     esac
@@ -68,14 +74,13 @@ case $BLOCK_INSTANCE in
        echo "<span foreground=\"$color\">$label</span>" 
       ;;
     "extIf") 
-       label=" "
+       label=""
+       # label=" "
        echo "<span foreground=\"$color\">$label</span>" 
        echo "<span foreground=\"$color\">$label</span>" 
        echo "<span foreground=\"$color\">$label</span>" 
       ;;
   esac
-
-
 
 
 # [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] && exit

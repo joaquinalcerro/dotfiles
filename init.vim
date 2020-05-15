@@ -1,18 +1,22 @@
 " ---------------------------------------
+" Modify ColorScheme with my preferences
+" ---------------------------------------
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * highlight Define cterm=italic ctermfg=176 gui=italic guifg=#C586C0
+                      " \ | highlight StatusLine cterm=NONE ctermbg=231 ctermfg=160 gui=NONE guibg=#ffffff guifg=#d70000
+                      " \ | highlight Normal cterm=NONE ctermbg=17 gui=NONE guibg=#00005f
+augroup END
+
+" ---------------------------------------
 " Basic Configuration
 " ---------------------------------------
 
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 
-" set t_Co=256
-" set termguicolors
-set background=dark
-" Set leader key
-let mapleader=","
+let mapleader="," " Set leader key
 
 set expandtab
 set shiftwidth=2
@@ -22,75 +26,33 @@ set encoding=utf8
 set laststatus=2
 set cursorline
 set modifiable
-set guifont=InconsolataGo\ Nerd\ Font\ Complete:h11
-" set autochdir
-"
+set guifont=Fira\ Code:h11
+set background=dark
+
+" Change cursor when insert mode
 autocmd InsertEnter,InsertLeave * set cul!
 
-" Disable terminal line numbers
+" Moves any copy/yank to the system clipboard
+" Copy to system clipboard is executed thru plugin yank.vim
+" ----- this is a alternative -----
+" set clipboard=unnamedplus
+
+"" Disable terminal line numbers
 augroup TerminalStuff
    au!
   autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
-"Enable syntax and plugins (for netrw)
-syntax enable
+syntax enable "Enable syntax and plugins (for netrw)
 filetype plugin indent on
-
-set nocompatible              " be iMproved, required
-filetype on                  " required
+set nocompatible " be iMproved, required
+filetype on      " required
 
 " Changes the color of docs in Elixir Files based on Color Scheme
 let g:elixir_use_markdown_for_docs = 1
 
-" ---------------------------------------------
-" Set folding configuration
-" --------------------------------------------
-" set foldmethod=indent
-" set foldcolumn=2
-"
-" inoremap <F8> <C-O>za
-" nnoremap <F8> za
-" onoremap <F8> <C-C>za
-" vnoremap <F8> zf
-
-" ---------------------------------------------
-"  Tagbar FileType for Elixir Files
-" --------------------------------------------
-
-let g:tagbar_type_elixir = {
-    \ 'ctagstype' : 'elixir',
-    \ 'kinds' : [
-        \ 'p:protocols',
-        \ 'm:modules',
-        \ 'e:exceptions',
-        \ 'y:types',
-        \ 'd:delegates',
-        \ 'f:functions',
-        \ 'c:callbacks',
-        \ 'a:macros',
-        \ 't:tests',
-        \ 'i:implementations',
-        \ 'o:operators',
-        \ 'r:records'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 'p' : 'protocol',
-        \ 'm' : 'module'
-    \ },
-    \ 'scope2kind' : {
-        \ 'protocol' : 'p',
-        \ 'module' : 'm'
-    \ },
-    \ 'sort' : 0
-    \ }
-
-" ---------------------------------------------
-"  Set tags configuration
-" --------------------------------------------
-set tags=tags;
-nmap <F3> :TagbarToggle<CR>
+" Use specific nodejs version
+let g:node_host_prog = '/usr/home/jalcerro/.config/nvm/versions/node/v12.6.0/bin/neovim-node-host'
 
 " ---------------------------------------------
 "  Numbers and relative number configuration
@@ -114,13 +76,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Easy exit from insert mode
 inoremap jj <ESC>
+inoremap <esc> <nop>
 
-" Change inside (), [], {}, <>
-" requires a fist action character as c, d
-" onoremap in( :<c-u>normal! f(vi(<cr>
-" onoremap in[ :<c-u>normal! f[vi[<cr>
-" onoremap in{ :<c-u>normal! f{vi{<cr>
-" onoremap in< :<c-u>normal! f<vi<<cr>
+" Save files
+nnoremap <leader>ss :wa<CR>
 
 "" ---------------------------------------------
 "  Load plugins with minpack
@@ -128,18 +87,19 @@ inoremap jj <ESC>
 packadd minpac
 call minpac#init()
 
-if has('nvim')
-  call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
-elseif
-  call minpac#add('Shougo/deoplete.nvim')
-  call minpac#add('roxma/nvim-yarp')
-  call minpac#add('roxma/vim-hug-neovim-rpc')
-endif
+" if has('nvim')
+"   call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+" elseif
+"   call minpac#add('Shougo/deoplete.nvim')
+"   call minpac#add('roxma/nvim-yarp')
+"   call minpac#add('roxma/vim-hug-neovim-rpc')
+" endif
 
+call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('k-takata/minpac', {'type': 'opt'})
-call minpac#add('ervandew/supertab')
+" call minpac#add('ervandew/supertab')
 call minpac#add('SirVer/ultisnips')
-call minpac#add('honza/vim-snippets')
+" call minpac#add('honza/vim-snippets')
 call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
@@ -149,20 +109,20 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-surround')
 call minpac#add('elixir-editors/vim-elixir')
 call minpac#add('slashmili/alchemist.vim')
-call minpac#add('scrooloose/nerdtree')
+" call minpac#add('scrooloose/nerdtree')
 call minpac#add('jlanzarotta/bufexplorer')
-call minpac#add('elmcast/elm-vim')
 call minpac#add('dracula/vim', {'name': 'dracula'})
+call minpac#add('tomasiser/vim-code-dark')
 call minpac#add('mileszs/ack.vim')
-call minpac#add('Xuyuanp/nerdtree-git-plugin')
+" call minpac#add('Xuyuanp/nerdtree-git-plugin')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('w0rp/ale')
-call minpac#add('mattn/emmet-vim')
+" call minpac#add('mattn/emmet-vim')
 call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('dracula/zsh')
-call minpac#add('majutsushi/tagbar')
+call minpac#add('elixir-lsp/elixir-ls')
 
 " ---------------------------------------------
 "  Alchemist Configuration
@@ -170,6 +130,8 @@ call minpac#add('majutsushi/tagbar')
 
 let g:alchemist_iex_term_size = 15
 let g:alchemist_iex_term_split = 'split'
+" let g:alchemist_tag_map = '<C-]>'
+" let g:alchemist_tag_stack_map = '<C-T>'
 
 
 " ---------------------------------------------
@@ -182,11 +144,12 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/_build/*,*/deps/*
 "---------------------------------------------
 "  Color Scheme
 "  --------------------------------------------
-packadd! dracula
-let g:dracula_colorterm = 0
+" packadd! dracula
+" let g:dracula_colorterm = 0
 " colorscheme molokai
-colorscheme dracula
+" colorscheme dracula
 " colorscheme gruvbox
+colorscheme codedark
 
 " ---------------------------------------------
 "  Python configuration
@@ -197,14 +160,13 @@ let g:python3_host_prog = '/usr/bin/python3'
 " ---------------------------------------
 "  ALE Linters
 "  --------------------------------------
-let g:ale_elixir_elixir_ls_release = '/home/jalcerro/.config/nvim/repos/elixir-ls/release'
+" let g:ale_elixir_elixir_ls_release = '/home/jalcerro/.config/nvim/pack/minpac/start/elixir-ls/release'
 " ---------
-let g:ale_linters = {
-\   'elixir': ['credo', 'elixir-ls'],
-\} 
-let g:ale_linters_explicit = 1
+" let g:ale_linters = {
+" \   'elixir': ['credo', 'elixir-ls'],
+" \} 
+" let g:ale_linters_explicit = 1
 " ---------
-nmap <leader>gtd :ALEGoToDefinition<CR>
 
 " ---------------------------------------
 "  Vim Git integration mappings
@@ -216,37 +178,13 @@ nmap <leader>dif :Gvdiffsplit<CR>
 "  Vim Git Gutter Plugin Configuration
 " ---------------------------------------
 
-nmap <leader>l <Plug>(GitGutterNextHunk)
-nmap <leader>h <Plug>(GitGutterPrevHunk)
-
-" ---------------------------------------
-"  Emmet Plugin Configuration
-" ---------------------------------------
-
-  let g:user_emmet_leader_key=','
-
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css EmmetInstall
-"
- let g:user_emmet_settings = {
-  \  'php' : {
-  \    'extends' : 'html',
-  \    'filters' : 'c',
-  \  },
-  \  'xml' : {
-  \    'extends' : 'html',
-  \  },
-  \  'eex' : {
-  \    'extends' : 'html',
-  \  },
-  \}
+nmap <leader>j <Plug>(GitGutterNextHunk)
+nmap <leader>k <Plug>(GitGutterPrevHunk)
 
 " ---------------------------------------
 "  Neosnippets
 " ---------------------------------------
-" set runtimepath+=~/.config/nvim/pack/minpac/start/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 
 
 " ---------------------------------------
@@ -263,30 +201,30 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Nerdtree explorer width
-:let g:NERDTreeWinSize=40
+" :let g:NERDTreeWinSize=40
 
 " Change arrow types
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+" let g:NERDTreeDirArrowExpandable = '▸'
+" let g:NERDTreeDirArrowCollapsible = '▾'
 
 " Open vim with ctl+n map key
 " map <C-n> :NERDTreeToggle<CR>
 " map <F2> :NERDTreeToggle<CR>
-nnoremap ff :NERDTreeToggle<CR>
+" nnoremap ff :NERDTreeToggle<CR>
 
 " Git flags for NerdTree
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "✹",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "✖",
+"     \ "Dirty"     : "✗",
+"     \ "Clean"     : "✔︎",
+"     \ 'Ignored'   : '☒',
+"     \ "Unknown"   : "?"
+"     \ }
 
 " ---------------------------------------
 " Tabs configuration
@@ -304,13 +242,21 @@ set ignorecase
 set smartcase
 map <CR> :nohl<cr>
 
+"Search down into subfolders
+"Provides tab-completionfo all file-related tasks
+set path+=.,**
+set wildignore+=**/node_modules/**
+set wildignore+=**/_build/**
+
+
 " Let iTerm display file name
 set title
 
 " Set vim airline theme
 let g:netrw_liststyle=3
 let g:airline_powerline_fonts = 1
-let g:airline_theme='dark'
+let g:airline_theme='codedark'
+" let g:airline_theme='dark'
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#hunks#enabled=1
 " let g:airline#extensions#tabline#enabled = 1
@@ -339,16 +285,9 @@ nmap <leader>bh :bnext<CR>
 nmap <leader>bl :bp<CR>
 
 " Find files
+" nmap <leader>f <C-p>
 nmap <leader>f :find <C-R>
 nmap <leader>s :Ack! <C-R>
-
-" Save files
-nmap <C-s> :wa<CR>
-
-"Search down into subfolders
-"Provides tab-completionfo all file-related tasks
-set path+=**
-" set path=$PWD/**
 
 "Display matching
 set wildmenu wildmode=longest:full,full 
@@ -386,13 +325,17 @@ for dir in ["h", "j", "l", "k"]
     call s:mapMoveToWindowInDirection(dir)
 endfor
 
-
 " -------------------------
 "  Commands
 "  ------------------------
 
-" add elixir tags in eex files
-" autocmd FileType eelixir inoremap ee <%%><Esc>F%i
-
 " Format elixir files on save automatically
 autocmd BufWritePost *.exs,*.ex silent :!mix format %
+
+" -------------------------
+"  Source Files
+"  ------------------------
+
+source ~/.config/nvim/plugin-config/coc.vim
+source ~/.config/nvim/plugin-config/coc-snippets.vim
+source ~/.config/nvim/plugin-config/coc-explorer.vim

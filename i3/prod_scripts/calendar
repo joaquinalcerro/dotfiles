@@ -3,7 +3,8 @@
 
 width=300
 height=200
-datefmt="+  %b-%d %I:%M"
+datefmt="+ %b-%d %I:%M"
+# datefmt="+  %b-%d %I:%M"
 # datefmt="+%H:%M:%S  %A: %d:%m:%Y"
 
 OPTIND=1

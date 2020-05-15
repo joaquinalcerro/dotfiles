@@ -2,7 +2,8 @@
 # Copyright (C) 2018 Minbari
 # Display used, free and total memory with the help of freecolor utility
 
-color="#00ffff"
+color="#000000"
+# color="#00ffff"
 
 total_mem="$(freecolor -m -o | head -n 2 | tail -n 1 | cut -c15-18)"
 used_mem="$(freecolor -m -o | head -n 2 | tail -n 1 | cut -c26-29)"
@@ -12,7 +13,7 @@ kb_total_mem=$((total_mem/1024))
 kb_used_mem=$((used_mem/1024))
 
 if [ "${kb_used_mem}" -lt "${kb_total_mem}" ]; then
-   echo "${kb_used_mem} / ${kb_total_mem} GB"
+   echo "${kb_used_mem}/${kb_total_mem} GB"
    echo "GB"
    echo "$color"
 fi    

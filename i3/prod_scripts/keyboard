@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Left click
+if [ "${BLOCK_BUTTON}" -eq 1 ]; then
+  xkb-switch -s "us" >/dev/null
+# Right click
+elif [ "${BLOCK_BUTTON}" -eq 3 ]; then
+  xkb-switch -s "es" >/dev/null
+fi
+
+layout=$(xkb-switch -p | cut -c 1-2)
+
+case $layout in
+   us) echo "US "
+       ;;
+   es) echo "ES "
+       ;;
+esac

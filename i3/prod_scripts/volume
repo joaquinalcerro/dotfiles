@@ -2,8 +2,10 @@
 # Copyright (C) 2018 Minbari
 
 # Color
-color1="#6699ff"
-color2="#e60000"
+# color1="#6699ff"
+# color2="#e60000"
+color1="#000000"
+color2="#000000"
 
 
 # Left click

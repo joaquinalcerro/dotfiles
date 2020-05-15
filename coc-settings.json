@@ -1,0 +1,19 @@
+
+{
+  "elixir.pathToElixirLS": "/home/jalcerro/.config/nvim/pack/minpac/start/elixir-ls/release/language_server.sh",
+  "snippets.ultisnips.directories": [
+  "UltiSnips",
+  "/home/jalcerro/.config/nvim/pack/minpac/start/ultisnips"
+],
+  // explorer
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  }
+}
+
+
+

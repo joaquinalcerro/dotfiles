@@ -2,11 +2,20 @@
 # Copyright (C) 2018 Minbari
 
 colors0="#e60000"
-colors1="#ff9900"
-colors2="#ffff00"
-colors3="#99ff33"
-colors4="#66ffff"
-unknown_color="#00cccc"
+colors1="#000000"
+colors2="#000000"
+colors3="#000000"
+colors4="#000000"
+unknown_color="#000000"
+
+# colors0="#e60000"
+# colors1="#ff9900"
+# colors2="#ffff00"
+# colors3="#99ff33"
+# colors4="#000000"
+# colors4="#66ffff"
+# unknown_color="#00cccc"
+
 pictograme="■"
 
 Blife=$(sysctl hw.acpi.battery.life | cut -d " " -f2)

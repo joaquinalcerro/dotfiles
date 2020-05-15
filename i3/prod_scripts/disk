@@ -2,7 +2,8 @@
 # Copyright (C) 2018 Minbari
 
 # Color
-color="#00ffff"
+color="#000000"
+# color="#00ffff"
 
 INSTANCE="${BLOCK_INSTANCE}"
 URGENT_VALUE=90

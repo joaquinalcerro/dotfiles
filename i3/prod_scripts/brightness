@@ -1,8 +1,9 @@
 #!/bin/bash
 
 icon=""
-color1="#6699ff"
-color2="#cc00cc"
+# color1="#6699ff"
+# color2="#cc00cc"
+color2="#000000"
 
 if [ "${BLOCK_BUTTON}" -eq 1 ]; then
   sysctl hw.acpi.video.lcd0.brightness > /dev/null

@@ -2,8 +2,9 @@
 # Copyright (C) 2018 Minbari
 
 # Color
-color="#6666ff"
-color2="#00ffff"
+# color="#6666ff"
+# color="#00ffff"
+color="#000000"
 
 INSTANCE="{BLOACK_INSTANCE:-1}"
 
@@ -16,7 +17,7 @@ if [ "${LOAD}" != "" ]; then
 
    echo "${LOAD}%"
    echo "${LOAD}"
-   echo "$color2"
+   echo "$color"
 
    if [ "${LOAD_PERC}" -ge "${URGENT_VALUE}" ]; then
       exit 33
