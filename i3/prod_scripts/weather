@@ -3,7 +3,7 @@
 # Based on http://openweathermap.org/current
 
 
-API_KEY="802366e73127563f4019b12eaacee13b"
+API_KEY="$(echo $OPENWEATHER_API_KEY)"
 
 # Check on http://openweathermap.org/find
 CITY_ID="${BLOCK_INSTANCE}"
