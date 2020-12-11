@@ -8,7 +8,7 @@ set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
-set cmdheight=2                         " More space for displaying messages
+set cmdheight=1                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
@@ -51,6 +51,7 @@ set smartcase
 set path+=.,**
 set wildignore+=**/node_modules/**
 set wildignore+=**/_build/**
+set wildignore+=**/deps/**
 
 " CtrlP Configuration
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/_build/*,*/deps/*
@@ -84,6 +85,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 " Avoids collision with <TAB> key for autocomplete
 let g:UltiSnipsExpandTrigger = '<c-j>'
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " -------------------------
 "  Commands

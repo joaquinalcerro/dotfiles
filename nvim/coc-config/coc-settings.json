@@ -25,5 +25,8 @@
     "dd": "cutFile",
     "p": "pasteFile",
     "d": "delete"
-  }
+  },
+  "html.enable": true, 
+  "html.filetypes": ["eex", "eelixir", "html", "handlebars", "htmldjango"],
+  "html.autoClosingTags": true
 }

@@ -1,6 +1,3 @@
-" colorscheme codedark
-colorscheme gruvbox
-
 " ---------------------------------------
 " Modify ColorScheme with my preferences
 " ---------------------------------------
@@ -12,4 +9,10 @@ augroup MyColors
 augroup END
 
 
+" ---------------------------------------
+" Italic Font options
+" ---------------------------------------
+let g:gruvbox_italic=1
 
+" colorscheme codedark
+colorscheme gruvbox
