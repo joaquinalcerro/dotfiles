@@ -1,21 +1,16 @@
 
 {
-  "elixir.pathToElixirLS": "/home/jalcerro/.config/nvim/pack/minpac/start/elixir-ls/release/language_server.sh",
-//  "snippets.ultisnips.directories": [
-//  "UltiSnips",
-//  "/home/jalcerro/.config/nvim/pack/minpac/start/ultisnips"
-//],
-  // explorer
+  "elixir.pathToElixirLS": "/home/jalcerro/.config/nvim/pack/minpac/start/elixir-ls/release/language_server.sh", 
   "explorer.width": 40,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
-  "explorer.file.column.git.icon.added": "✚",
-  "explorer.file.column.git.icon.deleted": "✖",
-  "explorer.file.column.git.icon.modified": "✹",
-  "explorer.file.column.git.icon.renamed": "➜",
-  "explorer.file.column.git.icon.unmerged": "═",
-  "explorer.file.column.git.icon.untracked": "✭",
-  "explorer.keyMappings": {
+  "explorer.git.icon.status.added": "✚",
+  "explorer.git.icon.status.deleted": "✖",
+  "explorer.git.icon.status.modified": "✹",
+  "explorer.git.icon.status.renamed": "➜",
+  "explorer.git.icon.status.unmerged": "═",
+  "explorer.git.icon.status.untracked": "✭",
+  "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "o": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
     "v": "open:vsplit",

@@ -19,4 +19,4 @@ alias tm="tmux new -s Main\; new-window -n 'code' \; new-window -n 'controllers'
 alias glog="git log --all --decorate --oneline --graph"
 
 alias services='systemctl list-units --type=service --state=running'
-alias nvim="~/Downloads/nvim-linux64/bin/nvim"
+# alias nvim="~/Downloads/nvim-linux64/bin/nvim"
