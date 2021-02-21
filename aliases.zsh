@@ -1,7 +1,17 @@
+# Directory aliases
+alias ll='ls -lh --group-directories-first --color=auto'
+alias lls='ll -S'
+alias lld='ll -t'
+alias lln='ll -s'
+alias l='ll -A'
+alias fd="fdfind"
+
 alias ex="cd ~/ElixirDev"
 alias hm="cd ~"
 alias epr="cd ~/ElixirDev/production/epr"
 alias epru="cd ~/ElixirDev/development/epr_umbrella"
+alias mer="cd ~/ElixirDev/development/mercando_umbrella"
+alias dev="cd ~/ElixirDev/development"
 alias cls="clear"
 alias nv="~/Development/nvim/nvim.appimage"
 alias ds="du --max-depth=1 -hc . | sort -hr"
@@ -12,6 +22,7 @@ alias lswifi="ifconfig wlan0 list scan"
 alias dcup="docker-compose up"
 alias dcdown="docker-compose down"
 alias dss="sudo systemctl start docker.service"
+alias notes="cd ~/CW/notes"
 # alias tm="tmux"
 # alias sd="sudo swapoff -a && systemctl poweroff"
 # alias tm="tmux -2 new-session -n 'DevIDE' \; split-window -d -p 20" 

@@ -14,5 +14,9 @@ augroup END
 " ---------------------------------------
 let g:gruvbox_italic=1
 
+let g:material_style='oceanic'
+colorscheme vim-material
+
+" colorscheme dracula
 " colorscheme codedark
-colorscheme gruvbox
+" colorscheme gruvbox

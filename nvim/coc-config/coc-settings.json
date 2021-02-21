@@ -22,6 +22,10 @@
     "d": "delete"
   },
   "html.enable": true, 
-  "html.filetypes": ["eex", "eelixir", "html", "handlebars", "htmldjango"],
-  "html.autoClosingTags": true
+  "html.filetypes": ["leex", "eex", "eelixir", "html", "handlebars", "htmldjango"],
+  "html.autoClosingTags": true,
+  "emmet.includeLanguages": {
+    "eelixir": "html",
+    "mason": "html"
+  }
 }

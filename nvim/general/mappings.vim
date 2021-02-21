@@ -1,6 +1,9 @@
 " Toggle numbers
 nmap <F12> :set number! relativenumber!<CR>    
 
+" Note taking keybindings
+nmap <leader>dt :put=strftime('%c')<CR>i<BS><space>jj
+
 " Return to previous buffer
 nnoremap tb :b#<CR>
 
@@ -21,7 +24,7 @@ nnoremap <leader>ss :wa<CR>
 " Vim Git integration mappings
 nmap <leader>df :Gvdiffsplit<CR>
 nmap <leader>gs :Gstatus<CR>
-nmap <leader>gs :Glog<CR>
+nmap <leader>gl :Glog<CR>
 
 " Vim Git Gutter Plugin Configuration
 nmap <leader>j <Plug>(GitGutterNextHunk)

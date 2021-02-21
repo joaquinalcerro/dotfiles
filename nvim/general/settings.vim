@@ -35,7 +35,6 @@ set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                          " Your working directory will always be the same as your working directory
 set termguicolors
-set background=dark
 set title                               " Let iTerm display file name
 set wildmenu wildmode=longest:full,full " Configure wildmenu for matching elements
 set splitbelow                          " Position the split below current window
@@ -89,6 +88,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " -------------------------
+"  Mix format configuration
+"  ------------------------
+let g:mix_format_on_save = 1
+
+
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+" -------------------------
 "  Commands
 "  ------------------------
 
@@ -102,5 +108,6 @@ autocmd InsertEnter,InsertLeave * set cul! " Change cursor when insert mode
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
-" Format elixir files on save automatically
-autocmd BufWritePost *.exs,*.ex silent :!mix format %
+" Set auto warp when editing notes
+au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.note setlocal textwidth=80
