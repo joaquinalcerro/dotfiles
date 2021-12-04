@@ -1,15 +1,33 @@
 
 {
-  "elixir.pathToElixirLS": "/home/jalcerro/.config/nvim/pack/minpac/start/elixir-ls/release/language_server.sh", 
   "explorer.width": 40,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
+  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5]",
+  "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS",
+  "explorer.file.root.template": "[icon & 1] PROJECT ([root])",
+  "explorer.icon.expanded": " ",
+  "explorer.icon.collapsed": " ",
+    "explorer.icon.customIcons": {
+    "icons": {
+      "folderClosed": {
+        "code": " ",
+        "color": "#00afaf"
+      },
+      "folderOpened": {
+        "code": " ",
+        "color": "#00afaf"
+      }
+    }
+  },
+  "explorer.filename.colored.enable": false,
+  "explorer.git.icon.status.mixed": "",
   "explorer.git.icon.status.added": "✚",
-  "explorer.git.icon.status.deleted": "✖",
-  "explorer.git.icon.status.modified": "✹",
+  "explorer.git.icon.status.deleted": "",
+  "explorer.git.icon.status.modified": "",
   "explorer.git.icon.status.renamed": "➜",
   "explorer.git.icon.status.unmerged": "═",
-  "explorer.git.icon.status.untracked": "✭",
+  "explorer.git.icon.status.untracked": "",
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "o": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
@@ -21,11 +39,12 @@
     "p": "pasteFile",
     "d": "delete"
   },
-  "html.enable": true, 
+  "html.enable": true,
   "html.filetypes": ["leex", "eex", "eelixir", "html", "handlebars", "htmldjango"],
   "html.autoClosingTags": true,
   "emmet.includeLanguages": {
     "eelixir": "html",
     "mason": "html"
-  }
+  },
+  "elixirLS.dialyzerEnabled": false
 }

@@ -12,11 +12,14 @@ augroup END
 " ---------------------------------------
 " Italic Font options
 " ---------------------------------------
-let g:gruvbox_italic=1
+let g:gruvbox_italic = 1
 
-let g:material_style='oceanic'
-colorscheme vim-material
+" options: soft, medium, dark
+let g:gruvbox_contrast_light = 'soft'
+
+" let g:material_style='oceanic'
+" colorscheme vim-material
 
 " colorscheme dracula
 " colorscheme codedark
-" colorscheme gruvbox
+colorscheme gruvbox

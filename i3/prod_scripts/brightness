@@ -1,16 +1,8 @@
 #!/bin/bash
 
-icon=""
-# color1="#6699ff"
-# color2="#cc00cc"
-color2="#000000"
+icon=
 
-if [ "${BLOCK_BUTTON}" -eq 1 ]; then
-  sysctl hw.acpi.video.lcd0.brightness > /dev/null
-fi
+blevel=$(xrandr --verbose | grep -m 1 Brightness | awk '{print $2}')
+percent=$(echo "scale=2; ($blevel/1.4)*100" | bc -l | cut -d'.' -f1)
 
-Blevel=$(sysctl hw.acpi.video.lcd0.brightness | awk '{ print $2 }')
-
-echo "$icon $Blevel%"
-echo "$icon $Blevel%"
-echo "$color2"
+echo "$icon $percent%"

@@ -1,0 +1,15 @@
+#!/bin/bash
+# Copyright (C) 2018 Minbari
+
+action=$1
+amount=$2
+current=$(xrandr --verbose | grep -m 1 Brightness | awk '{print $2}')
+
+if [ $action == "inc" ]
+then
+  new=$( echo "$current + $amount" | bc -l )
+  xrandr --output eDP-1 --brightness $new
+else
+  new=$( echo "$current - $amount" | bc -l )
+  xrandr --output eDP-1 --brightness $new
+fi  

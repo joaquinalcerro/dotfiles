@@ -1,5 +1,12 @@
+" if has('nvim-0.5')
+"   nnoremap ff :NERDTreeToggle<CR>
+" endif
+
+" Toggle lineIndent
+nmap <leader>id :IndentLinesToggle<CR>    
+
 " Toggle numbers
-nmap <F12> :set number! relativenumber!<CR>    
+nmap <leader>nn :set number! relativenumber!<CR>    
 
 " Note taking keybindings
 nmap <leader>dt :put=strftime('%c')<CR>i<BS><space>jj
@@ -29,6 +36,10 @@ nmap <leader>gl :Glog<CR>
 " Vim Git Gutter Plugin Configuration
 nmap <leader>j <Plug>(GitGutterNextHunk)
 nmap <leader>k <Plug>(GitGutterPrevHunk)
+nmap <leader>gg :GitGutterToggle<CR>
+
+" Toggle vim airline status bar
+nmap <leader>aa :AirlineToggle<CR>
 
 " Tabs configuration
 nmap <F5> :tabnew<CR>
