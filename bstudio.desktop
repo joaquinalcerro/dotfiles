@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Bootstrap Studio
+Comment=Bootstrap Studio
+Icon=input-tablet
+Exec="/home/jalcerro/Downloads/Bootstrap Studio.AppImage"
+Categories=Editor;

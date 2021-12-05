@@ -1,0 +1,38 @@
+snippet eet "eex tag"
+<%= $1 %>
+endsnippet
+
+snippet mount "Mount function definition"
+@impl true
+def mount(_params, _session, socket) do
+	socket =
+		assign(
+			socket,
+			$1
+		)
+
+	{:ok, socket}
+end
+
+endsnippet
+
+snippet lrender "Mount function definition"
+@impl true
+def render(assigns) do
+	~L"""
+	$1
+	"""
+endsnippet
+
+snippet todo "Todo definition"
+## TODO: User: `echo $USER`, Date:  `!v strftime("%c")`
+## DESC: ${1:description} 
+
+endsnippet
+
+snippet sL "Triple quote interpolation"
+~L"""
+$1
+"""
+
+endsnippet

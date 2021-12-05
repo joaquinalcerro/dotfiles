@@ -1,0 +1,62 @@
+snippet nim "Template for internal meeting" b
+
+===============================================================================
+Reunión - Interna: ${1:Area}, Fecha:  `!v strftime("%c")`
+User: `echo $USER`
+
+Participantes:
+- Cable & Wireless
+	* $2
+
+Objetivo General: $3 
+
+
+Puntos a tratar:
+1. 
+
+
+Anotaciones:
+1. 
+
+
+Acuerdos:
+
+No.				Acción										Responsable												Fecha
+-------------------------------------------------------------------------------
+1. 
+
+
+endsnippet
+
+snippet ncm "Template for a cliente meeting" b
+
+===============================================================================
+Reunión - Cliente: ${1:cliente}, Fecha:  `!v strftime("%c")`
+User: `echo $USER`
+
+Participantes:
+- Cable & Wireless
+	* $2
+
+- $1
+	*
+
+Objetivo: $3 
+
+
+Puntos a tratar:
+1. 
+
+
+Anotaciones:
+1. 
+
+
+Acuerdos:
+
+No.				Acción										Responsable												Fecha
+-------------------------------------------------------------------------------
+1. 
+
+
+endsnippet

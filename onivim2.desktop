@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=OniVim2
+Comment=OniVim2
+Icon=input-tablet
+Exec=/home/jalcerro/Downloads/Onivim2-x86_64-master.AppImage
+Categories=Editor;
