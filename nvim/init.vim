@@ -1,7 +1,3 @@
-if exists('g:vscode')
-  source $HOME/.config/nvim/vscode/vsCode_settings.vim
-  source $HOME/.config/nvim/vscode/vsCode_mappings.vim
-else
   " -------------------------
   "  Source Files
   "  ------------------------
@@ -11,19 +7,16 @@ else
   source $HOME/.config/nvim/general/colors.vim
   source $HOME/.config/nvim/filetype.vim
 
-  source $HOME/.config/nvim/coc-config/plugin-config/coc.vim
-  source $HOME/.config/nvim/coc-config/plugin-config/coc-snippets.vim
-  source $HOME/.config/nvim/coc-config/plugin-config/coc-explorer.vim
+  " COC pakages required
+  " source $HOME/.config/nvim/coc-config/plugin-config/coc.vim
+  " source $HOME/.config/nvim/coc-config/plugin-config/coc-snippets.vim
+  " source $HOME/.config/nvim/coc-config/plugin-config/coc-explorer.vim
 
-  " if has('nvim-0.5')
-  "   "  Native neovim LSP Configuration
-  "   source $HOME/.config/nvim/general/lsp-config.vim
-  "   luafile $HOME/.config/nvim/general/compe-config.lua
-  "   luafile $HOME/.config/nvim/general/elixir-lsp.lua
-  " else
-  "   "  CoC Configuration
-  "   source $HOME/.config/nvim/coc-config/plugin-config/coc.vim
-  "   source $HOME/.config/nvim/coc-config/plugin-config/coc-snippets.vim
-  "   source $HOME/.config/nvim/coc-config/plugin-config/coc-explorer.vim
-  " endif
-endif
+  " LSP packages required
+  source $HOME/.config/nvim/general/nvim-tree-config.vim
+  luafile $HOME/.config/nvim/general/lsp-config.lua
+  " luafile $HOME/.config/nvim/general/cmp-config.lua
+  " luafile $HOME/.config/nvim/general/elixir-lsp.lua
+  luafile $HOME/.config/nvim/general/nvim-tree.lua
+
+

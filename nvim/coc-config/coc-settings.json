@@ -46,5 +46,6 @@
     "eelixir": "html",
     "mason": "html"
   },
+  "elixir.pathToElixirLS": "~/.config/nvim/pack/minpac/start/elixir-ls/release/language_server.sh",
   "elixirLS.dialyzerEnabled": false
 }

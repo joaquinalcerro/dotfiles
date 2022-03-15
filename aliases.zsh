@@ -4,8 +4,9 @@ alias lls='ll -S'
 alias lld='ll -t'
 alias lln='ll -s'
 alias l='ll -A'
-alias fd="fdfind"
+# alias fd="fdfind"
 
+alias bs="cd ~/Downloads/Boostrap/theme-application/v4/"
 alias ex="cd ~/ElixirDev"
 alias hm="cd ~"
 alias epr="cd ~/ElixirDev/production/epr"
@@ -13,7 +14,7 @@ alias epru="cd ~/ElixirDev/development/epr_umbrella"
 alias mer="cd ~/ElixirDev/development/mercando_umbrella"
 alias dev="cd ~/ElixirDev/development"
 alias cls="clear"
-alias nvim="~/Applications/neovim/nvim.appimage"
+# alias nvim="~/Applications/neovim/nvim.appimage"
 alias ds="du --max-depth=1 -hc . | sort -hr"
 alias tdc="tmux detach-client"
 alias nvconf="~/.config/nvim"
